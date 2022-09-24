@@ -1,4 +1,2 @@
 ToDo: 
-1. Add recursive functionality
-2. Check for permission errors
- 
+1. Stop function 

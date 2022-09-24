@@ -9,9 +9,13 @@ def checkForZipAndUnzip(arr):
             exist = os.path.isdir(endPointDir)
             if exist:
                 endPointDir = checkIfDirExists(endPointDir)
-            os.mkdir(endPointDir)
-            with zipfile.ZipFile(i, "r") as zip_ref:
-                zip_ref.extractall(endPointDir)
+            try: 
+                os.mkdir(endPointDir)
+                with zipfile.ZipFile(i, "r") as zip_ref:
+                    zip_ref.extractall(endPointDir)
+                os.remove(i)
+            except:
+                print("Something went wrong")
 
 def checkIfDirExists(endPointDir):
     notUnique = True
