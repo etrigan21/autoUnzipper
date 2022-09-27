@@ -14,8 +14,9 @@ def checkForZipAndUnzip(arr):
                 with zipfile.ZipFile(i, "r") as zip_ref:
                     zip_ref.extractall(endPointDir)
                 os.remove(i)
-            except:
+            except Exception as e:
                 print("Something went wrong")
+                print("exception", e)
 
 def checkIfDirExists(endPointDir):
     notUnique = True
